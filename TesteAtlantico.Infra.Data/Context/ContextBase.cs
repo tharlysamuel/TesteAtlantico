@@ -21,15 +21,6 @@ namespace TesteAtlantico.Infra.Data.Context
             modelBuilder.Entity<Usuario>(new UsuarioConfiguration().Configure);
 
         }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-7NNGT30;Initial Catalog=foton;User id=admin;Password=123456;");
-                base.OnConfiguring(optionsBuilder);
-            }
-        }
     }
 
 }

@@ -14,12 +14,10 @@ namespace TesteAtlantico.Web.Controllers
     public class UsuarioController : Controller
     {
         private readonly IUsuarioService _service;
-        private readonly IMapper _mapper;
 
-        public UsuarioController(IUsuarioService service, IMapper mapper)
+        public UsuarioController(IUsuarioService service)
         {
             _service = service;
-            _mapper = mapper;
         }
 
         public async Task<IActionResult> Index()

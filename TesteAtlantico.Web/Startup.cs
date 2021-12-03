@@ -11,7 +11,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using TesteAtlantico.Infra.Data.Context;
 using TesteAtlantico.Infra.IoC;
-using TesteAtlantico.Web.Mapping;
 
 namespace TesteAtlantico.Web
 {
@@ -34,10 +33,6 @@ namespace TesteAtlantico.Web
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection"))
                 );
-
-            var mapper = AutoMapperConfig.RegisterMapping();
-
-            services.AddSingleton(mapper);
 
             services.AddControllersWithViews();
         }
